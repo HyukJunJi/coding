@@ -1,4 +1,4 @@
-package com.example.coding.재귀;
+package com.example.coding.재귀.DFS;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -20,6 +20,7 @@ public class DFS {
   // 간선 추가
   void addEdge(int src, int dest) {
     adjLists[src].add(dest);
+    adjLists[dest].add(src);
   }
 
   // DFS 실행
@@ -52,6 +53,6 @@ public class DFS {
 
     System.out.println("Depth First Traversal (starting from vertex 2):");
 
-    g.startDFS(0);
+    g.startDFS(2);
   }
 }

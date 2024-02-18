@@ -5,30 +5,47 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 //https://velog.io/@sds1vrk/%EC%9E%90%EB%B0%94-%EB%AC%B8%EB%B2%95-%EB%B0%8F-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-DFS-BFS
-public class 부분집합구하기 {
-  public static void main(String[] args) throws IOException {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int N = Integer.parseInt(br.readLine());
-    int [] num = new int[N];
-    for(int i = 0 ; i < N ; i++) {
-      num[i] = i+1;
-    }
-    for(int i = 0; i < N; i++) {
-      dfs(num,i+1,0,new ArrayList<>());
-    }
+public class 부분집합구하기2 {
+  // static 전역변수
+  static int n;
+  static int arr[];
 
+  public void dfs(int k) {
+    // 종료
+    if (k==n+1) {
+      // 출력
+      String temp="";
+      for (int i=1;i<=n;i++) {
+        // 1인것만 temp에 넣는다.
+        if (arr[i]==1) {
+          temp+=i+" ";
+        }
+      }
+      // 공집합은 제외
+      if (temp.length()>0) {
+        System.out.println(temp);
+      }
+    }
+    else {
+      // 있다.
+      arr[k]=1;
+      dfs(k+1);
+      // 없다.
+      arr[k]=0;
+      dfs(k+1);
+    }
   }
-  public static void dfs(int[] num, int n,int start, List<Integer> templist) {
-    if(templist.size()==n) {
-      System.out.println(templist);
-      return;
-    }
-    for(int i = start;i<num.length;i++) {
-      templist.add(num[i]);
-      dfs(num,n,i+1,templist);
-      templist.remove(templist.size()-1);
-    }
+  public void solution() {
+    dfs(1);
+  }
+  public static void main(String[] args) {
+    부분집합구하기2 main=new 부분집합구하기2();
+    Scanner scan=new Scanner(System.in);
+    n=scan.nextInt();
+    arr=new int[n+1];
+    main.solution();
   }
 }

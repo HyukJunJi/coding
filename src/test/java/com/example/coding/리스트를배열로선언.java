@@ -1,12 +1,13 @@
-package com.example.coding.재귀.DFS;
+package com.example.coding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DFS1 {
+public class 리스트를배열로선언 {
   public static void main(String[] args) {
     // 경고를 피하기 위해 @SuppressWarnings 애너테이션 사용
+    @SuppressWarnings("unchecked")
     List<Integer>[] arr = new List[3]; // 크기가 3인 리스트 배열 생성
 
     // 배열의 각 요소에 리스트 할당
