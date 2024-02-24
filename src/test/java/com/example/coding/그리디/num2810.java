@@ -4,21 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class num10162 {
+public class num2810 {
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int T = Integer.parseInt(br.readLine());
-    int A=0,B=0,C=0;
-    A = T/300;
-    T = T%300;
-    B = T/60;
-    T = T%60;
-    C = T/10;
-    T = T%10;
-    if(T!=0) {
-      System.out.println(-1);
-      System.exit(0);
+    int N = Integer.parseInt(br.readLine());
+    char[] charArray = br.readLine().replace("LL", "S").toCharArray();
+    if(N>=charArray.length+1) {
+      System.out.println(charArray.length+1);
+    } else if(N<=charArray.length+1) {
+      System.out.println(N);
     }
-    System.out.println(A+" "+B+" "+C);
   }
 }
