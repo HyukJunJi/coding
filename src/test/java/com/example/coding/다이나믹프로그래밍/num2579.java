@@ -24,5 +24,5 @@ public class num2579 {
 
     System.out.println(sum);
   }
-  
+
 }
