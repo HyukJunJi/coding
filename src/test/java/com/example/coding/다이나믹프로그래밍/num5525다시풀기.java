@@ -1,11 +1,8 @@
 package com.example.coding.다이나믹프로그래밍;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class num5525 {
+public class num5525다시풀기 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt(), M = sc.nextInt();
