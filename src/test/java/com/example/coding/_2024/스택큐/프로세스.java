@@ -3,8 +3,6 @@ package com.example.coding._2024.스택큐;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-import org.json.JSONObject;
-
 public class 프로세스 {
   public static void main(String[] args) {
     Solution s = new Solution();
